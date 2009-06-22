@@ -1,8 +1,3 @@
-//TODO:
-//License, put it up on Github?
-//Test test test, first jQuery plugin
-//Example: test what would happen if tagthe.net gives us HTML tags
-
 //TODO: set optional and configurable encapsulation tags (for ex. <li></li>)
 //TODO: make separator configurable
 //TODO: get people and language from dimensions array too 

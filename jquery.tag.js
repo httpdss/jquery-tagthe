@@ -12,7 +12,7 @@
     $.fn.tagthe = function(options) {   
         var opts = $.extend({},$.fn.tagthe.defaults, options);
         return this.each(function() {
-            $(this).click(function(){  // la accion disparadora deberia ser independiente
+            $(this).click(function(){
                 text = escape(opts.content);
                 var url = "http://tagthe.net/api/?text="+text+"&view=json&callback=?";
                 if (!jQuery.tagvar) {

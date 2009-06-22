@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Tagging example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script src="jquery.tag.js"></script>
+    <script type="text/javascript">
+    //para hacerlo en plugin tendriamos que hacer dos funciones separadas, una para tags, otra que extraiga el lang. camino 1) dos llamadas al api, camino 2) una llamada, de alguna manera guardar el objeto json, y pasarselo con las funciones
+
+    //sacar texto del textarea
+    var tagvar = false;
+    $(document).ready(function() {
+             //$("a").tagthe();
+             $("a").tagthe({info_type:'topic'});
+             $("a").tagthe({info_type:'language'});
+    });
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+      <div id="content">Tag will call escape() on the text, no need to do it. Example text: "Bienvenido al primer tutorial de Javascript y HTML"</div>
+      <a href="#">Click to tag</a>
+      <div id="tags">Tags should go here</div>
+  </body>
+</html>

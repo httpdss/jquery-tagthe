@@ -8,14 +8,18 @@
     <script type="text/javascript">
 
     $(document).ready(function() {
-             $("a").tagthe({info_type:'topic'});
-             $("a").tagthe({info_type:'language', destination:'#language'});
+             $("a").click(function() { 
+                 content = $("#totag").html();
+                 $(document).tagthe({info_type:'topic', content:content}); 
+                 $(document).tagthe({info_type:'language', destination:'#language', content:content}); 
+             })
+
     });
     </script>
   </head>
   <body style="font-family: Arial;border: 0 none;">
-      <div id="content">Tag will call escape() on the text, no need to do it. By default, it will tag 'Bienvenido al primer tutorial de Javascript y HTML meto a David Beckham para gente.'. This can be changed in jquery.tag.js, $.fn.tagthe.defaults, content:
-      </div>
+      <div id="content">Tag will call escape() on the text, no need to do it. By default, it will tag:</div>
+      <div id="totag">Bienvenido al primer tutorial de Javascript y HTML meto a David Beckham para gente.</div>
       <a href="#">Click to tag</a>
       <div id="tags">Tags should go here</div>
       <div id="language">Language should go here</div>

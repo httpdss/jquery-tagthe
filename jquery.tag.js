@@ -3,30 +3,21 @@
 //TODO: get people and language from dimensions array too 
 
 (function($) {
-    jQuery.tagvar = false;
     $.fn.tagthe = function(options) {   
         var opts = $.extend({},$.fn.tagthe.defaults, options);
         return this.each(function() {
-            $(this).click(function() {
-                text = escape(opts.content);
-                var url = "http://tagthe.net/api/?text="+text+"&view=json&callback=?";
-                if (!jQuery.tagvar) {
-                    $.getJSON(url, function(data) { 
-                        prnt_html(data,opts); 
-                        jQuery.tagvar = data;
-                    });
-                } 
-                else {
-                    prnt_html(jQuery.tagvar,opts);
-                }
-                console.info(jQuery.tagvar);
-            });
-        });
+            text = escape(opts.content);
+            var url = "http://tagthe.net/api/?text="+text+"&view=json&callback=?";
+                $.getJSON(url, function(data) { 
+                    prnt_html(data,opts); 
+                    jQuery.tagvar = data;
+                });
+        }); 
     };
     $.fn.tagthe.defaults = {
             info_type:'language',
             destination:'#tags',
-            content:'Bienvenido al primer tutorial de Javascript y HTML meto a David Beckham para gente.'
+            content:''
     };
     $.fn.tagthe.format = function(txt) { 
         return txt + " "; 
